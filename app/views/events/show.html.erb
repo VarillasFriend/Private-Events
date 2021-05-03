@@ -1,0 +1,18 @@
+<%= @event.info %>
+<h2>
+    Creator: <%= @event.creator.email %>
+</h2>
+<h3> Attending </h3>
+<% @event.attendees.each do |attendee| %>
+<%= attendee.email %>
+<% end %>
+<h3> Invited </h3>
+<% @event.invitees.each do |invitee| %>
+<%= invitee.email %>
+<% end %>
+
+<% if current_user == @event.creator %>
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<% end %>
+<%= link_to 'Back', events_path %>

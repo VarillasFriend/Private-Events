@@ -1,0 +1,87 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @media (prefers-color-scheme: dark) {
+    html {
+        --background-color1: black;
+        --background-color2: #111;
+        --color1: white;
+        --color2: #EEE;
+    }
+}
+@media (prefers-color-scheme: light) {
+    html {
+        --background-color1: white;
+        --background-color2: #EEE;
+        --color1: black;
+        --color2: #111;
+        --links: #333;
+    }
+}
+
+.event-holder {
+    display: flex;
+}
+
+.event {
+    width: 30%;
+    height: 20rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--background-color2);
+    color: var(--color1);
+    margin: 1.5%;
+    word-wrap: break-word;
+}
+
+.new-event {
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+}
+
+.logout {
+    position: absolute;
+    right: 6rem;
+    top: 2rem;
+}
+
+@media only screen and (max-width: 1000px) {
+    .event {
+        width: 45%;
+        margin: 2.5%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .new-event {
+        right: 2rem;
+        top: 1.2rem;
+    }
+    
+    .logout {
+        right: 5rem;
+        top: 1.2rem;
+    }
+
+    .event-holder {
+        display: block;
+    }
+
+    .event {
+        width: 85%;
+    }
+}
